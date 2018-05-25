@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <h4  class="sub-title" ng-bind="$ctrl.title"></h4>
+        <div class="file-list">
+            <table class="table table-condensed table-hover">
+                <!-- <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr ng-repeat="x in $ctrl.list" ng-click="$ctrl.getReport($index)"  ng-class="{active: $ctrl.selected == $index}">
+                        <td>{{x.filename | filename}}</td>
+                        <td><span class="badge">100</span></td>
+                        <td><span class="tag btn-danger">malicious</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-8">
+                    <h4 class="sub-title">Analysis report</h4>
+  
+                    <div class="panel panel-default">
+                    <div class="panel-heading">Summary</div>
+                    <!-- Table -->
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td>File name</td>
+                            <td>{{$ctrl.report.filename | filename}}</td>
+                        </tr>
+                        <tr>
+                            <td>Path</td>
+                            <td>{{$ctrl.report.abs_path}} <span ng-if="!$ctrl.report.abs_path">Not Available</span></td>
+                        </tr>
+                        <tr>
+                            <td>Attributes</td>
+                            <td><span ng-repeat="attr in $ctrl.report.file_attributes">{{attr}}, </span><span ng-if="!$ctrl.report.file_attributes">Not Available</span> </td>
+                        </tr>
+                        <tr>
+                            <td>IO Status</td>
+                            <td><span ng-repeat="io in $ctrl.report.iostatus">{{io}}, </span><span ng-if="!$ctrl.report.iostatus">Not Available</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Static file information</div>
+                    
+                    
+                        <!-- Table -->
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Created at</td>
+                                    <td>{{$ctrl.report.ext_info.create_timestamp | date}} <span ng-if="!$ctrl.report.ext_info.create_timestamp">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>File Info</td>
+                                    <td>{{$ctrl.report.ext_info.file_info}} <span ng-if="!$ctrl.report.ext_info.file_info">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>MD5</td>
+                                    <td>{{$ctrl.report.ext_info.md5}} <span ng-if="!$ctrl.report.ext_info.md5">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>MIME</td>
+                                    <td>{{$ctrl.report.ext_info.mime}} <span ng-if="!$ctrl.report.ext_info.mime">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>SHA1</td>
+                                    <td>{{$ctrl.report.ext_info.sha1}} <span ng-if="!$ctrl.report.ext_info.sha1">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>SHA256</td>
+                                    <td>{{$ctrl.report.ext_info.sha256}} <span ng-if="!$ctrl.report.ext_info.sha256">Not Available</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Size</td>
+                                    <td>{{$ctrl.report.ext_info.size}} <span ng-if="!$ctrl.report.ext_info.size">Not Available</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Threat analysis</div>
+                        <div class="panel-body">
+                                {{$ctrl.report.filename | filename}} is <span class="tag btn-danger">malicious</span> with a score of <span class="badge">100</span>
+                        </div>
+                    </div>
+
+    </div> <!--report div ends-->
+</div>
+
+
+<div class="container">
+    
+  </div>
+  
+  
+  
+  
+  

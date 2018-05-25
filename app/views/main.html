@@ -1,0 +1,21 @@
+<div class="flex-container"ng-if="$ctrl.data == null">
+  <div>
+    <div class="loader"></div>
+    <div >Loading...</div>
+    
+  </div>  
+</div>
+<div ng-if="$ctrl.data != null">
+
+  <!-- <ll-test-comp item="$ctrl.val" ></ll-test-comp> -->
+  <div>
+    <ul class="nav nav-tabs">
+      <li role="presentation" ng-click="$ctrl.count = 0" ng-class="{active: $ctrl.count == 0}" ><a>File Reads</a></li>
+      <li role="presentation"ng-click="$ctrl.count = 1" ng-class="{active: $ctrl.count == 1}"><a>File Writes</a></li>
+    </ul>
+    <br>
+    <ll-analysis-file-reads list="$ctrl.data.file_reads" ng-if="$ctrl.count == 0"></ll-analysis-file-reads>
+    <ll-analysis-file-writes list="$ctrl.data.file_writes" ng-if="$ctrl.count == 1"></ll-analysis-file-writes>
+  </div>
+
+</div>
