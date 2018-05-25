@@ -43,9 +43,4 @@ angular
       }
     },
   })
-  .filter('filename', function(){
-    return function(x){
-      var arr = x.split('\\')
-      return arr[arr.length-1]
-    }
-  })
+  
