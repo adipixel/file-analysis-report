@@ -3,13 +3,6 @@
         <h4  class="sub-title" ng-bind="$ctrl.title"></h4>
         <div class="file-list">
             <table class="table table-condensed table-hover">
-                <!-- <thead>
-                    <tr>
-                        <th>Filename</th>
-                        <th>Score</th>
-                        <th>Status</th>
-                    </tr>
-                </thead> -->
                 <tbody>
                     <tr ng-repeat="x in $ctrl.list" ng-click="$ctrl.getReport($index)"  ng-class="{active: $ctrl.selected == $index}">
                         <td>{{x.filename | filename}}</td>

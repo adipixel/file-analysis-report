@@ -8,26 +8,24 @@
  *
  * Main module of the application.
  */
-
-angular
-  .module('challengeApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'llMainPage',
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        template: '<ll-main-page></ll-main-page>',
-      })
-      .when('/read_report', {
-        template: '<ll-analysis-file-reads></ll-analysis-file-reads>',
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+(function (angular) {
+	angular
+		.module('challengeApp', [
+			'ngAnimate',
+			'ngCookies',
+			'ngResource',
+			'ngRoute',
+			'ngSanitize',
+			'ngTouch',
+			'llMainPage',
+		])
+		.config(function ($routeProvider) {
+			$routeProvider
+				.when('/', {
+					template: '<ll-main-page></ll-main-page>',
+				})
+				.otherwise({
+					redirectTo: '/'
+				});
+		});
+}(window.angular));
