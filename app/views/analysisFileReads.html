@@ -59,7 +59,7 @@
                             <tbody>
                                 <tr>
                                     <td>Created at</td>
-                                    <td>{{$ctrl.report.ext_info.create_timestamp | date}} <span ng-if="!$ctrl.report.ext_info.create_timestamp">Not Available</span></td>
+                                    <td><span ng-if="$ctrl.report.ext_info.create_timestamp">{{$ctrl.report.ext_info.create_timestamp | roundTripDate | date: "medium"}}</span><span ng-if="!$ctrl.report.ext_info.create_timestamp">Not Available</span></td>
                                 </tr>
                                 <tr>
                                     <td>File Info</td>

@@ -10,3 +10,8 @@ angular
       return res
     }
   })
+  .filter('roundTripDate', function(){
+    return function(x){
+      return Date.parse(x)
+    }
+  })
