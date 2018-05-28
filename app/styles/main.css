@@ -51,6 +51,31 @@
 .center-container {
   text-align: center;
 }
+.analysis-report {
+  background-color: white;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {
+    background-color: #f1f1c9;
+  }
+  to {
+    background-color: white;
+  }
+}
+/* Standard syntax */
+@keyframes example {
+  from {
+    background-color: #f1f1c9;
+  }
+  to {
+    background-color: white;
+  }
+}
+.highlight {
+  animation-name: example;
+  animation-duration: 2500ms;
+}
 
 /*
 You may do your styling here or in your own file.
@@ -161,6 +186,31 @@ body {
 }
 .center-container {
   text-align: center;
+}
+.analysis-report {
+  background-color: white;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {
+    background-color: #f1f1c9;
+  }
+  to {
+    background-color: white;
+  }
+}
+/* Standard syntax */
+@keyframes example {
+  from {
+    background-color: #f1f1c9;
+  }
+  to {
+    background-color: white;
+  }
+}
+.highlight {
+  animation-name: example;
+  animation-duration: 2500ms;
 }
 
 /*

@@ -12,8 +12,23 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js',
-      'test/**/*Spec.js'
+      'bower_components/jquery/jquery.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/angular-scenario/angular-scenario.js',
+
+      'app/scripts/components/main.js',
+      'app/scripts/app.filters.js',
+      'app/scripts/components/analysis-file-reads.component.js',
+      'app/scripts/components/analysis-file-writes.component.js',
+      'app/scripts/app.js',
+      
+      'test/**/*spec.js',
+      'test/*spec.js',
     ],
 
 

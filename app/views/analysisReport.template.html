@@ -4,7 +4,7 @@
         <div class="file-list">
             <table class="table table-condensed table-hover">
                 <tbody>
-                    <tr ng-repeat="x in $ctrl.list" ng-click="$ctrl.getReport($index)"  ng-class="{active: $ctrl.selected == $index}">
+                    <tr ng-repeat="x in $ctrl.list" ng-click="$ctrl.getReport($index); $ctrl.highlight()"  ng-class="{active: $ctrl.selected == $index}">
                         <td>{{x.filename | filename}}</td>
                         <td><span class="badge">100</span></td>
                         <td><span class="tag btn-danger">malicious</span></td>
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="col-xs-12 col-md-8">
+    <div id="analysis-report" class="col-xs-12 col-md-8 analysis-report">
                     <h4 class="sub-title">Analysis report</h4>
   
                     <div class="panel panel-default">
@@ -43,7 +43,7 @@
                     </div>
                 
 
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" ng-if="$ctrl.report.ext_info">
                         <div class="panel-heading">Static file information</div>
                     
                     
@@ -52,7 +52,7 @@
                             <tbody>
                                 <tr>
                                     <td>Created at</td>
-                                    <td><span ng-if="$ctrl.report.ext_info.create_timestamp">{{$ctrl.report.ext_info.create_timestamp | roundTripDate | date: "medium"}}</span><span ng-if="!$ctrl.report.ext_info.create_timestamp">Not Available</span></td>
+                                    <td><span ng-if="$ctrl.report.ext_info.create_timestamp">{{$ctrl.report.ext_info.create_timestamp | unixDate | date: "medium"}}</span><span ng-if="!$ctrl.report.ext_info.create_timestamp">Not Available</span></td>
                                 </tr>
                                 <tr>
                                     <td>File Info</td>
@@ -93,11 +93,5 @@
 </div>
 
 
-<div class="container">
-    
-  </div>
-  
-  
-  
   
   

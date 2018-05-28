@@ -19,10 +19,11 @@
 				this.val = 5
 				this.count = 0
 				this.data = null
+				this.host = 'http://localhost:9000/'
 				self = this
 				$http({
 					method: 'get',
-					url: 'http://localhost:9000/api/files.json',
+					url: this.host + 'api/files.json',
 					headers: {
 						'Content-Type': 'application/json'
 					}
@@ -33,13 +34,6 @@
 					}, function (err) {
 						console.log(err)
 					})
-
-				this.tabClass = 'active'
-				this.toggleTabClass = function () {
-					if (this.tabClass == 'active') {
-
-					}
-				}
 			},
 		})
 }(window.angular));

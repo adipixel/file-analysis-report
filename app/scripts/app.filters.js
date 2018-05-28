@@ -22,13 +22,13 @@
 		})
 		/**
 	   * @ngdoc filter
-	   * @name roundTripDate
+	   * @name unixDate
 	   * @module llMainPage
 	   * @description 
 	   * This filter takes the round-trip date
 	   * and returns unix stlye date
 	   */
-		.filter('roundTripDate', function () {
+		.filter('unixDate', function () {
 			return function (x) {
 				return Date.parse(x)
 			}
