@@ -15,25 +15,17 @@
 		.component('llMainPage', {
 			transclude: true,
 			templateUrl: 'views/main.html',
-			controller: function ($location, $scope, $http) {
+			controller: function ($location, $scope, $http, dataService) {
 				this.val = 5
 				this.count = 0
 				this.data = null
 				this.host = 'http://localhost:9000/'
 				self = this
-				$http({
-					method: 'get',
-					url: this.host + 'api/files.json',
-					headers: {
-						'Content-Type': 'application/json'
-					}
+				dataService.getData().then(function(data){
+					self.data = data
+				}, function(err){
+					console.log(err)
 				})
-					.then(function (response) {
-						console.log(response.data)
-						self.data = response.data
-					}, function (err) {
-						console.log(err)
-					})
 			},
 		})
 }(window.angular));

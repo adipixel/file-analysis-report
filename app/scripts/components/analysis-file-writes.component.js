@@ -28,7 +28,19 @@
 					this.report = this.list[id]
 					this.selected = id
 				}
+				this.highlight = function(){
+					var element = document.getElementById('analysis-report')
+					if(element.classList.contains('highlight')){
+						element.classList.remove('highlight')
+					}
+					setTimeout(()=>{
+						element.classList.add('highlight')
+					}, 0)
+					
+					
+				}
 			}
+			
 
 		});
 }(window.angular));
