@@ -106,6 +106,3 @@ during the analysis run and associates it with all files in the report.
   - **Example:** `1233`
   - **Description:** The file size in bytes
 
-# Questions?
-
-Feel free to email ggoncalves@lastline.com for any questions you may have.
